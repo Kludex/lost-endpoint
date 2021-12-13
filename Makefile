@@ -8,30 +8,30 @@ lint:  ## Linter the code.
 	@echo "🚨 Linting code"
 <<<<<<< HEAD
 	poetry run cruft check
-	poetry run isort safe_route_path tests --check
-	poetry run flake8 safe_route_path tests
-	poetry run mypy safe_route_path
-	poetry run black safe_route_path tests --check --diff
+	poetry run isort lost_endpoint tests --check
+	poetry run flake8 lost_endpoint tests
+	poetry run mypy lost_endpoint
+	poetry run black lost_endpoint tests --check --diff
 =======
-	isort safe_route_path tests --check
-	flake8 safe_route_path tests
-	mypy safe_route_path
-	black safe_route_path tests --check --diff
+	isort lost_endpoint tests --check
+	flake8 lost_endpoint tests
+	mypy lost_endpoint
+	black lost_endpoint tests --check --diff
 >>>>>>> 27d3f5c48a52475a758113e657a3ba19fd189bb8
 
 
 .PHONY: format
 format:
 	@echo "🎨 Formatting code"
-	isort safe_route_path tests
-	autoflake --remove-all-unused-imports --recursive --remove-unused-variables --in-place safe_route_path tests --exclude=__init__.py
-	black safe_route_path tests
+	isort lost_endpoint tests
+	autoflake --remove-all-unused-imports --recursive --remove-unused-variables --in-place lost_endpoint tests --exclude=__init__.py
+	black lost_endpoint tests
 
 
 .PHONY: tests
 test:  ## Test your code.
 	@echo "🍜 Running pytest"
-	pytest tests/ --cov=safe_route_path --cov-report=term-missing:skip-covered --cov-report=xml --cov-fail-under 100
+	pytest tests/ --cov=lost_endpoint --cov-report=term-missing:skip-covered --cov-report=xml --cov-fail-under 100
 
 
 .PHONY: publish

@@ -1,7 +1,7 @@
 import inspect
 
-import safe_route_path
+import lost_endpoint
 
 
 def test_smoke():
-    assert inspect.ismodule(safe_route_path)
+    assert inspect.ismodule(lost_endpoint)
